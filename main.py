@@ -1,7 +1,7 @@
 import os
 import pandas as pd
-from src.rfm import customer_rfm, generate_churn_labels
-from src.modelling import model
+from rfm import customer_rfm, generate_churn_labels
+from modelling import model
 import datetime
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import figure 
