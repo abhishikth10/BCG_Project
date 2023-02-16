@@ -45,12 +45,14 @@ if __name__ == "__main__":
     rfm_df = pd.concat(frames)
     Customers, probs = model(rfm_df)
     
-    plt.figure(figsize=(12, 6))
-    plt.hist(probs, bins = int(180/6))
-    plt.title('Probability Distribution of Retention')
-    plt.xlabel('Retention Probability')
-    plt.ylabel('# Customers')
-    x = plt.show()
+    plt.figure(figsize=(15, 10))
+    values, bins, bars = plt.hist(probs, edgecolor='white')
+    plt.xlabel("Retention Probability")
+    plt.ylabel("#Customers")
+    plt.title = ('Retention Distribution Distrubtion')
+    plt.bar_label(bars, fontsize=20, color='navy')
+    plt.margins(x=0.01, y=0.1)
+    plt.show()
     
     Customers['Retention Probability'] = probs
     Customers['R_rank'] = Customers['recency'].rank(ascending=False)
