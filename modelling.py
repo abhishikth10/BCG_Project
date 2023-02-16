@@ -6,7 +6,6 @@ from sklearn.metrics import classification_report, accuracy_score
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import figure
 import pickle
-model_path = "./model/"
 
 def model(rfm_df):
     rfm_df = rfm_df.sample(frac=1)
@@ -39,7 +38,7 @@ def model(rfm_df):
     else:
         rf_final = rf_over
         
-    filepath = model_path+'BCG_model.sav'
+    filepath = 'BCG_model.sav'
     pickle.dump(rf_final, open(filepath, 'wb'))
     
     feature_names = [i for i in X.columns]
